@@ -29,9 +29,10 @@ class Reset {
       document.dispatchEvent(resetEvent);
       let key: keyof IFilterStats;
       for (key in TemplateKeeper.currentTemplate) {
-        TemplateKeeper.currentTemplate[key] = TemplateKeeper.defaultTemplate[key];
+        const str = JSON.stringify(TemplateKeeper.defaultTemplate[key]);
+        TemplateKeeper.currentTemplate[key] = JSON.parse(str);
       }
-      let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
+      let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.defaultTemplate, ProductCreator.productArray);
       result = this.sorting.sortingProducts(result);
       this.creator.drawProducts(result);
     });

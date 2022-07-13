@@ -1,4 +1,4 @@
-import { IFilterStats } from '../interfacesAndTypes';
+import { IFilterStats, IFilterStatsConst } from '../interfacesAndTypes';
 
 const template: IFilterStats = {
   name: [''],
@@ -23,7 +23,7 @@ class TemplateKeeper {
     popularity: ['Да', 'Нет'],
   };
 
-  static defaultTemplate: IFilterStats = {
+  static defaultTemplate: IFilterStatsConst = <IFilterStatsConst> Object.freeze({
     name: [''],
     firm: ['HP', 'ASUS', 'Lenovo'],
     RAM: ['4 ГБ', '8 ГБ', '16 ГБ'],
@@ -32,7 +32,7 @@ class TemplateKeeper {
     amount: ['3', '9'],
     year: ['2016', '2021'],
     popularity: ['Да', 'Нет'],
-  };
+  });
 }
 
 export { template, TemplateKeeper };

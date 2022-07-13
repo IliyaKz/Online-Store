@@ -21,4 +21,6 @@ interface IFilterStats {
   popularity: string[];
 }
 
-export { IProductStats, IFilterStats };
+type IFilterStatsConst = Readonly<IFilterStats>;
+
+export { IProductStats, IFilterStats, IFilterStatsConst };

@@ -44,6 +44,8 @@ class RangeSlider {
     });
     document.addEventListener(('resetEvent'), () => {
       target.noUiSlider.reset();
+      leftValueContainer.innerText = (+(target.noUiSlider.get()[0])).toString();
+      rightValueContainer.innerText = (+(target.noUiSlider.get()[1])).toString();
     });
   }
 
