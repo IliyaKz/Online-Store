@@ -19,6 +19,7 @@
   },
   "rules": {
       "no-debugger": "off",
+      "@typescript-eslint/no-var-requires": "off",
       "no-console": 1,
       "@typescript-eslint/no-explicit-any": 2
   }
