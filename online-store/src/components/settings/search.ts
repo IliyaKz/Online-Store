@@ -2,6 +2,7 @@ import { ProductCreator } from '../products/productCreator';
 import { Product } from '../products/product';
 import { TemplateKeeper } from '../products/productTemplate';
 import { Sorting } from './sorting';
+import { Reset } from './reset';
 
 class Search {
   creator: ProductCreator;
@@ -23,6 +24,10 @@ class Search {
     input.placeholder = 'Введите запрос';
     input.autocomplete = 'off';
     input.autofocus = true;
+    input.value = '';
+    if (localStorage.getItem('searchValue') !== null) {
+      input.value = localStorage.getItem('searchValue') as string;
+    }
     input.addEventListener('input', () => {
       TemplateKeeper.currentTemplate.name[0] = input.value;
       let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
@@ -34,6 +39,11 @@ class Search {
     });
     target.append(form);
     form.append(input);
+    window.addEventListener('beforeunload', () => {
+      if (Reset.isSaveAllowed) {
+        localStorage.setItem('searchValue', input.value);
+      }
+    });
   }
 
 }

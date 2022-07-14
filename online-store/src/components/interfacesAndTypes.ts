@@ -21,6 +21,11 @@ interface IFilterStats {
   popularity: string[];
 }
 
+interface IRangeTemplate {
+  year: number[];
+  amount: number[];
+}
+
 type IFilterStatsConst = Readonly<IFilterStats>;
 
-export { IProductStats, IFilterStats, IFilterStatsConst };
+export { IProductStats, IFilterStats, IFilterStatsConst, IRangeTemplate };

@@ -1,3 +1,5 @@
+import { Reset } from './reset';
+
 class Basket {
 
   static basketContent: Array<string> = [];
@@ -8,8 +10,12 @@ class Basket {
     }
   }
  
-  saveContent(): void {
-    localStorage.setItem('currentBasket', JSON.stringify(Basket.basketContent));
+  setContent(): void {
+    window.addEventListener('beforeunload', () => {
+      if (Reset.isSaveAllowed) {
+        localStorage.setItem('currentBasket', JSON.stringify(Basket.basketContent));
+      }
+    });
   }
 
   createBasket(): void {
@@ -29,8 +35,9 @@ class Basket {
     messageContainer.append(message);
     this.getContent();
     window.addEventListener('beforeunload', () => {
-      localStorage.setItem('basketValue', counter.innerText);
-      localStorage.setItem('currentBasket', JSON.stringify(Basket.basketContent));
+      if (Reset.isSaveAllowed) {
+        localStorage.setItem('basketValue', counter.innerText);
+      }
     });
   }
  

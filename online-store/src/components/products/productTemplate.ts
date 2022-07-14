@@ -1,4 +1,5 @@
 import { IFilterStats, IFilterStatsConst } from '../interfacesAndTypes';
+import { Reset } from '../settings/reset';
 
 const template: IFilterStats = {
   name: [''],
@@ -33,6 +34,25 @@ class TemplateKeeper {
     year: ['2016', '2021'],
     popularity: ['Да', 'Нет'],
   });
+
+  setTemplate(): void {
+    window.addEventListener('beforeunload', () => {
+      if (Reset.isSaveAllowed) {
+        localStorage.setItem('savedTemplate', JSON.stringify(TemplateKeeper.currentTemplate));
+      }
+    });
+  }
+
+  getTemplate(): void {
+    if (localStorage.getItem('savedTemplate') !== null) {
+      const sample = JSON.parse(localStorage.getItem('savedTemplate') as string);
+      let key: keyof IFilterStats;
+      for (key in TemplateKeeper.currentTemplate) {
+        const str = JSON.stringify(sample[key]);
+        TemplateKeeper.currentTemplate[key] = JSON.parse(str);
+      }
+    }
+  }
 }
 
 export { template, TemplateKeeper };

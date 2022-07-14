@@ -1,25 +1,34 @@
 import { ProductCreator } from '../products/productCreator';
 import { Controller } from '../settings/controllers';
-import { TemplateKeeper } from '../products/productTemplate';
+import { Basket } from '../settings/basket';
+import { ProductStartDrawer } from '../products/productStartDrawer';
 
 class App {
   creator: ProductCreator;
 
   controller: Controller;
 
+  basket: Basket;
+
+  startDrawer: ProductStartDrawer;
+
   constructor() {
     this.creator = new ProductCreator;
     this.controller = new Controller;
+    this.basket = new Basket;
+    this.startDrawer = new ProductStartDrawer;
   }
 
   start(): void {
+    this.controller.addSetterGetter();
+    this.controller.drawBasket();
     this.creator.createProducts();
-    this.creator.drawProducts(this.creator.filterProducts(TemplateKeeper.defaultTemplate, ProductCreator.productArray));
     this.controller.drawCheckboxes();
     this.controller.drawRangeSliders();
     this.controller.drawSelect();
     this.controller.drawSearch();
     this.controller.drawResetsButton();
+    this.startDrawer.drawProducts();
   }
 }
 

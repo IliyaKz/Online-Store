@@ -1,6 +1,7 @@
 import { ProductCreator } from '../products/productCreator';
 import { Product } from '../products/product';
 import { TemplateKeeper } from '../products/productTemplate';
+import { Reset } from './reset';
 
 class Sorting {
 
@@ -62,6 +63,9 @@ class Sorting {
     const current = document.createElement('div') as HTMLElement;
     current.classList.add('select-current-value');
     current.innerText = 'От А до Я';
+    if (localStorage.getItem('currentSorting') !== null) {
+      current.innerText = localStorage.getItem('currentSorting') as string;
+    }
     const icon = document.createElement('div') as HTMLElement;
     icon.classList.add('select-icon');
     header.append(current);
@@ -79,6 +83,11 @@ class Sorting {
     });
     target.append(header);
     target.append(body);
+    window.addEventListener('beforeunload', () => {
+      if (Reset.isSaveAllowed) {
+        localStorage.setItem('currentSorting', current.innerText);
+      }
+    });
   }
 
 }

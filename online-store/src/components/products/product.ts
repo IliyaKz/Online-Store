@@ -1,4 +1,5 @@
 import { IProductStats } from '../interfacesAndTypes';
+import { Basket } from '../settings/basket';
 
 class Product {
   data: IProductStats;
@@ -11,6 +12,7 @@ class Product {
     const target = document.querySelector('.products') as HTMLElement;
     const prodItem = document.createElement('div') as HTMLElement;
     prodItem.classList.add('product-item');
+    if (Basket.basketContent.includes(this.data.name)) { prodItem.classList.add('product-added'); }
     target.append(prodItem);
     function addProperty(prop: string | number, propName?: string) {
       const el =  document.createElement('p') as HTMLElement;
@@ -28,28 +30,33 @@ class Product {
     prodItem.append(prodImg);
     const prodButton = document.createElement('button') as HTMLButtonElement;
     prodButton.classList.add('product-btn');
-    prodButton.classList.add('product-btn-add');
-    prodButton.innerHTML = 'В корзину';
+    if (Basket.basketContent.includes(this.data.name)) {
+      prodButton.classList.add('product-btn-remove');
+      prodButton.innerHTML = 'Убрать из корзины';
+    } else {
+      prodButton.classList.add('product-btn-add');
+      prodButton.innerHTML = 'В корзину';
+    }
     prodButton.addEventListener(('click'), () => {
       const basket = document.querySelector('.basket-counter') as HTMLElement;
-      if (prodButton.classList.contains('product-btn-add')) {
-        const count: number = +(basket.innerHTML);
+      const count: number = +(basket.innerHTML);
+      if (!Basket.basketContent.includes(this.data.name)) {
         if (count === 20) {
           const message = document.querySelector('.message-container') as HTMLElement;
           message.classList.remove('message-hidden');
         } else {
-          prodButton.classList.remove('product-btn-add');
-          prodButton.classList.add('product-btn-remove');
+          Basket.basketContent.push(this.data.name);
           basket.innerHTML = (count + 1).toString();
           prodButton.innerHTML = 'Убрать из корзины';
         }
       } else {
-        const count: number = +(basket.innerHTML);
-        prodButton.classList.remove('product-btn-remove');
-        prodButton.classList.add('product-btn-add');
+        Basket.basketContent = Basket.basketContent.filter(item => item !== this.data.name);
         basket.innerHTML = (count - 1).toString();
         prodButton.innerHTML = 'В корзину';
       }
+      prodButton.classList.toggle('product-btn-add');
+      prodButton.classList.toggle('product-btn-remove');
+      prodItem.classList.toggle('product-added');
     });
     addProperty(this.data.firm, 'Производитель');
     addProperty(this.data.RAM, 'RAM');

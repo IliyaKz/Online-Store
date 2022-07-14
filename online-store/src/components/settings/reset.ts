@@ -3,8 +3,12 @@ import { Product } from '../products/product';
 import { TemplateKeeper } from '../products/productTemplate';
 import { Sorting } from './sorting';
 import { IFilterStats } from '../interfacesAndTypes';
+import { Checkbox } from './checkboxes';
+import { RangeSlider } from './rangeSliders';
 
 class Reset {
+  static isSaveAllowed = true;
+
   creator: ProductCreator;
 
   sorting: Sorting;
@@ -27,6 +31,9 @@ class Reset {
         composed: true,
       });
       document.dispatchEvent(resetEvent);
+      Checkbox.currentCheckboxes = [];
+      RangeSlider.currentRanges.year = [];
+      RangeSlider.currentRanges.amount = [];
       let key: keyof IFilterStats;
       for (key in TemplateKeeper.currentTemplate) {
         const str = JSON.stringify(TemplateKeeper.defaultTemplate[key]);
@@ -35,6 +42,21 @@ class Reset {
       let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.defaultTemplate, ProductCreator.productArray);
       result = this.sorting.sortingProducts(result);
       this.creator.drawProducts(result);
+    });
+    target.append(wrapper);
+    wrapper.append(resetFilterButton);
+  }
+
+  createResetStorageButton(): void {
+    const target = document.querySelector('.resets') as HTMLElement;
+    const wrapper = document.createElement('div') as HTMLElement;
+    const resetFilterButton = document.createElement('button') as HTMLButtonElement;
+    resetFilterButton.classList.add('button', 'reset-storage-button');
+    resetFilterButton.innerText = 'Сбросить настройки';
+    resetFilterButton.addEventListener('click', () => {
+      Reset.isSaveAllowed = false;
+      localStorage.clear();
+      window.location.reload();
     });
     target.append(wrapper);
     wrapper.append(resetFilterButton);

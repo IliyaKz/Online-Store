@@ -3,6 +3,8 @@ import { RangeSlider } from './rangeSliders';
 import { Sorting } from './sorting';
 import { Search } from './search';
 import { Reset } from './reset';
+import { Basket } from './basket';
+import { TemplateKeeper } from '../products/productTemplate';
  
 class Controller {
   checkbox: Checkbox;
@@ -15,12 +17,18 @@ class Controller {
 
   reset: Reset;
 
+  basket: Basket;
+
+  template: TemplateKeeper;
+
   constructor() {
     this.checkbox = new Checkbox;
     this.ranges = new RangeSlider;
     this.sorting = new Sorting;
     this.search = new Search;
     this.reset = new Reset;
+    this.basket = new Basket;
+    this.template = new TemplateKeeper;
   }
 
   drawCheckboxes(): void {
@@ -48,8 +56,23 @@ class Controller {
 
   drawResetsButton(): void {
     this.reset.createResetFilterButton();
+    this.reset.createResetStorageButton();
   }
 
+  drawBasket(): void {
+    this.basket.createBasket();
+  }
+
+  addSetterGetter(): void {
+    this.basket.setContent();
+    this.basket.getContent();
+    this.checkbox.setCheckbox();
+    this.checkbox.getCheckbox();
+    this.ranges.setRanges();
+    this.ranges.getRanges();
+    this.template.setTemplate();
+    this.template.getTemplate();
+  }
 }
 
 export { Controller };
