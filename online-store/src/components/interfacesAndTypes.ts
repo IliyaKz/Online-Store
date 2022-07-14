@@ -1,28 +1,26 @@
 interface IProductStats {
   name: string;
   img: string;
-  firm: string;
-  RAM: string;
-  screen: string;
+  country: string;
+  horns: string;
   color: string;
   amount: string;
-  year: string;
+  size: string;
   popularity: string;
 }
 
 interface IFilterStats {
   name: string[];
-  firm: string[];
-  RAM: string[];
-  screen: string[];
+  country: string[];
+  horns: string[];
   color: string[];
   amount: string[];
-  year: string[];
+  size: string[];
   popularity: string[];
 }
 
 interface IRangeTemplate {
-  year: number[];
+  size: number[];
   amount: number[];
 }
 

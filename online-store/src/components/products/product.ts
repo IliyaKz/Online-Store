@@ -58,12 +58,11 @@ class Product {
       prodButton.classList.toggle('product-btn-remove');
       prodItem.classList.toggle('product-added');
     });
-    addProperty(this.data.firm, 'Производитель');
-    addProperty(this.data.RAM, 'RAM');
-    addProperty(this.data.screen, 'Экран');
+    addProperty(this.data.country, 'Родина');
+    addProperty(this.data.horns, 'Рога');
     addProperty(this.data.color, 'Цвет');
     addProperty(this.data.amount, 'Количество');
-    addProperty(this.data.year, 'Год выпуска');
+    addProperty(this.data.size, 'Длина, см');
     addProperty(this.data.popularity, 'Популярность');
     prodItem.append(prodButton);
   }

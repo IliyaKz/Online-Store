@@ -32,7 +32,7 @@ class Reset {
       });
       document.dispatchEvent(resetEvent);
       Checkbox.currentCheckboxes = [];
-      RangeSlider.currentRanges.year = [];
+      RangeSlider.currentRanges.size = [];
       RangeSlider.currentRanges.amount = [];
       let key: keyof IFilterStats;
       for (key in TemplateKeeper.currentTemplate) {

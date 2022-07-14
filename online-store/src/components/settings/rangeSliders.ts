@@ -17,7 +17,7 @@ class RangeSlider {
   message: Message;
 
   static currentRanges: IRangeTemplate = {
-    year: [],
+    size: [],
     amount: [],
   };
 

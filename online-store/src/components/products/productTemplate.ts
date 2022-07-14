@@ -3,35 +3,32 @@ import { Reset } from '../settings/reset';
 
 const template: IFilterStats = {
   name: [''],
-  firm: ['HP', 'ASUS', 'Lenovo'],
-  RAM: ['4 ГБ', '8 ГБ', '16 ГБ'],
-  screen: ['14"', '15.6"', '17.3"'],
-  color: ['Черный', 'Серебристый', 'Серый'],
-  amount: ['3', '9'],
-  year: ['2016', '2021'],
+  country: ['Африка', 'Америка', 'Евразия'],
+  horns: ['0', '1', '2', '3'],
+  color: ['Желтый', 'Красный', 'Зеленый', 'Синий'],
+  amount: ['2', '19'],
+  size: ['2', '17'],
   popularity: ['Да', 'Нет'],
 };
 
 class TemplateKeeper {
   static currentTemplate: IFilterStats = {
     name: [''],
-    firm: ['HP', 'ASUS', 'Lenovo'],
-    RAM: ['4 ГБ', '8 ГБ', '16 ГБ'],
-    screen: ['14"', '15.6"', '17.3"'],
-    color: ['Черный', 'Серебристый', 'Серый'],
-    amount: ['3', '9'],
-    year: ['2016', '2021'],
+    country: ['Африка', 'Америка', 'Евразия'],
+    horns: ['0', '1', '2', '3'],
+    color: ['Желтый', 'Красный', 'Зеленый', 'Синий'],
+    amount: ['2', '19'],
+    size: ['2', '17'],
     popularity: ['Да', 'Нет'],
   };
 
   static defaultTemplate: IFilterStatsConst = <IFilterStatsConst> Object.freeze({
     name: [''],
-    firm: ['HP', 'ASUS', 'Lenovo'],
-    RAM: ['4 ГБ', '8 ГБ', '16 ГБ'],
-    screen: ['14"', '15.6"', '17.3"'],
-    color: ['Черный', 'Серебристый', 'Серый'],
-    amount: ['3', '9'],
-    year: ['2016', '2021'],
+    country: ['Африка', 'Америка', 'Евразия'],
+    horns: ['0', '1', '2', '3'],
+    color: ['Желтый', 'Красный', 'Зеленый', 'Синий'],
+    amount: ['2', '19'],
+    size: ['2', '17'],
     popularity: ['Да', 'Нет'],
   });
 

@@ -36,18 +36,23 @@ class Controller {
   }
 
   drawCheckboxes(): void {
-    this.checkbox.createCheckbox('black', 'Черный', 'color');
-    this.checkbox.createCheckbox('silver', 'Серебристый', 'color');
-    this.checkbox.createCheckbox('grey', 'Серый', 'color');
-    this.checkbox.createCheckbox('hp', 'HP', 'firm');
-    this.checkbox.createCheckbox('asus', 'ASUS', 'firm');
-    this.checkbox.createCheckbox('lenovo', 'Lenovo', 'firm');
+    this.checkbox.createCheckbox('africa', 'Африка', 'country');
+    this.checkbox.createCheckbox('america', 'Америка', 'country');
+    this.checkbox.createCheckbox('eurasia', 'Евразия', 'country');
+    this.checkbox.createCheckbox('yellow', 'Желтый', 'color');
+    this.checkbox.createCheckbox('red', 'Красный', 'color');
+    this.checkbox.createCheckbox('green', 'Зеленый', 'color');
+    this.checkbox.createCheckbox('blue', 'Синий', 'color');
+    this.checkbox.createCheckbox('zero-horns', '0', 'horns');
+    this.checkbox.createCheckbox('one-horns', '1', 'horns');
+    this.checkbox.createCheckbox('two-horns', '2', 'horns');
+    this.checkbox.createCheckbox('three-horns', '3', 'horns');
     this.checkbox.createCheckbox('popularity', 'Да', 'popularity');
   }
 
   drawRangeSliders(): void {
-    this.ranges.createRangeSlider(3, 9, 'amount');
-    this.ranges.createRangeSlider(2016, 2021, 'year');
+    this.ranges.createRangeSlider(2, 19, 'amount');
+    this.ranges.createRangeSlider(2, 17, 'size');
   }
 
   drawSelect(): void {

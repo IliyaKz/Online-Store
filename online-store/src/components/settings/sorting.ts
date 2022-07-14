@@ -21,23 +21,23 @@ class Sorting {
     let res: number;
     arrayCopy.sort((a, b) => {
       switch (param) {
-        case 'От А до Я':
+        case 'По названию, от А до Я':
           res = 0;
           if (a.data.name < b.data.name) res = -1;
           if (a.data.name > b.data.name) res = 1;
           return res;
-        case 'От Я до А':
+        case 'По названию, от Я до А':
           res = 0;
           if (a.data.name < b.data.name) res = 1;
           if (a.data.name > b.data.name) res = -1;
           return res;
-        case 'Год вверх':
-          return (+a.data.year - +b.data.year) as number;
-        case 'Год вниз':
-          return (+b.data.year - +a.data.year) as number;
-        case 'Количество вверх':
+        case 'По размеру, по возрастанию':
+          return (+a.data.size - +b.data.size) as number;
+        case 'По размеру, по убыванию':
+          return (+b.data.size - +a.data.size) as number;
+        case 'По количеству, по возрастанию':
           return (+a.data.amount - +b.data.amount) as number;
-        case 'Количество вниз':
+        case 'По количеству, по убыванию':
           return (+b.data.amount - +a.data.amount) as number;
         default:
           return 0;
@@ -67,7 +67,7 @@ class Sorting {
     header.classList.add('select-header');
     const current = document.createElement('div') as HTMLElement;
     current.classList.add('select-current-value');
-    current.innerText = 'От А до Я';
+    current.innerText = 'По названию, от А до Я';
     if (localStorage.getItem('currentSorting') !== null) {
       current.innerText = localStorage.getItem('currentSorting') as string;
     }
@@ -77,12 +77,12 @@ class Sorting {
     header.append(icon);
     const body = document.createElement('div') as HTMLElement;
     body.classList.add('select-body');
-    this.createSelectItem('От А до Я', body, current);
-    this.createSelectItem('От Я до А', body, current);
-    this.createSelectItem('Год вверх', body, current);
-    this.createSelectItem('Год вниз', body, current);
-    this.createSelectItem('Количество вверх', body, current);
-    this.createSelectItem('Количество вниз', body, current);
+    this.createSelectItem('По названию, от А до Я', body, current);
+    this.createSelectItem('По названию, от Я до А', body, current);
+    this.createSelectItem('По размеру, по возрастанию', body, current);
+    this.createSelectItem('По размеру, по убыванию', body, current);
+    this.createSelectItem('По количеству, по возрастанию', body, current);
+    this.createSelectItem('По количеству, по убыванию', body, current);
     header.addEventListener('click', () => {
       body.classList.toggle('select-open');
     });

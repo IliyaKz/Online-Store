@@ -36,14 +36,13 @@ class ProductCreator {
       } else {
         nameRes = true;
       }
-      const firmRes: boolean = currentTemplate.firm.includes(item.data.firm);
-      const ramRes: boolean = currentTemplate.RAM.includes(item.data.RAM);
-      const screenRes: boolean = currentTemplate.screen.includes(item.data.screen);
+      const countryRes: boolean = currentTemplate.country.includes(item.data.country);
+      const hornsRes: boolean = currentTemplate.horns.includes(item.data.horns);
       const colorRes: boolean = currentTemplate.color.includes(item.data.color);
       const popularityRes: boolean = currentTemplate.popularity.includes(item.data.popularity);
       const amountRes: boolean = (+item.data.amount >= +currentTemplate.amount[0] && +item.data.amount <= +currentTemplate.amount[1]);
-      const yearRes: boolean = (+item.data.year >= +currentTemplate.year[0] && +item.data.year <= +currentTemplate.year[1]);
-      return (nameRes && firmRes && ramRes && screenRes && colorRes && popularityRes && amountRes && yearRes);
+      const sizeRes: boolean = (+item.data.size >= +currentTemplate.size[0] && +item.data.size <= +currentTemplate.size[1]);
+      return (nameRes && countryRes && hornsRes && colorRes && popularityRes && amountRes && sizeRes);
     });
     return result;
   }
