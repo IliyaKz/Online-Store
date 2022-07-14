@@ -4,6 +4,7 @@ import { TemplateKeeper } from '../products/productTemplate';
 import { IFilterStats, IRangeTemplate } from '../interfacesAndTypes';
 import { Sorting } from './sorting';
 import { Reset } from './reset';
+import { Message } from './message';
 import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 
@@ -13,6 +14,8 @@ class RangeSlider {
 
   sorting: Sorting;
 
+  message: Message;
+
   static currentRanges: IRangeTemplate = {
     year: [],
     amount: [],
@@ -21,6 +24,7 @@ class RangeSlider {
   constructor() {
     this.creator = new ProductCreator;
     this.sorting = new Sorting();
+    this.message = new Message;
   }
 
   setRanges(): void {
@@ -72,6 +76,7 @@ class RangeSlider {
       let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
       result = this.sorting.sortingProducts(result);
       this.creator.drawProducts(result);
+      this.message.showMessage();
     });
     document.addEventListener(('resetEvent'), () => {
       target.noUiSlider.reset();

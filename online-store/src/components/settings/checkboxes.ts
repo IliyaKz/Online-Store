@@ -4,6 +4,7 @@ import { TemplateKeeper } from '../products/productTemplate';
 import { IFilterStats } from '../interfacesAndTypes';
 import { Sorting } from './sorting';
 import { Reset } from './reset';
+import { Message } from './message';
 
 class Checkbox {
 
@@ -11,11 +12,14 @@ class Checkbox {
 
   sorting: Sorting;
 
+  message: Message;
+
   static currentCheckboxes: Array<string> = [];
 
   constructor() {
     this.creator = new ProductCreator();
     this.sorting = new Sorting();
+    this.message = new Message;
   }
 
   setCheckbox(): void {
@@ -61,6 +65,7 @@ class Checkbox {
       let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
       result = this.sorting.sortingProducts(result);
       this.creator.drawProducts(result);
+      this.message.showMessage();
     });
     document.addEventListener(('resetEvent'), () => {
       checkbox.checked = false;

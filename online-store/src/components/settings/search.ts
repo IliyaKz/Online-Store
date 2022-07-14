@@ -3,15 +3,19 @@ import { Product } from '../products/product';
 import { TemplateKeeper } from '../products/productTemplate';
 import { Sorting } from './sorting';
 import { Reset } from './reset';
+import { Message } from './message';
 
 class Search {
   creator: ProductCreator;
 
   sorting: Sorting;
 
+  message: Message;
+
   constructor() {
     this.creator = new ProductCreator();
     this.sorting = new Sorting();
+    this.message = new Message;
   }
 
   createSearch(): void {
@@ -33,6 +37,7 @@ class Search {
       let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
       result = this.sorting.sortingProducts(result);
       this.creator.drawProducts(result);
+      this.message.showMessage();
     });
     document.addEventListener(('resetEvent'), () => {
       input.value = '';

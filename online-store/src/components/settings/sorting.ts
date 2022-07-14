@@ -2,13 +2,17 @@ import { ProductCreator } from '../products/productCreator';
 import { Product } from '../products/product';
 import { TemplateKeeper } from '../products/productTemplate';
 import { Reset } from './reset';
+import { Message } from './message';
 
 class Sorting {
 
   creator: ProductCreator;
 
+  message: Message;
+
   constructor() {
     this.creator = new ProductCreator();
+    this.message = new Message;
   }
 
   sortingProducts(array: Array<Product>): Array<Product> {
@@ -52,6 +56,7 @@ class Sorting {
       let arr: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
       arr = this.sortingProducts(arr);
       this.creator.drawProducts(arr);
+      this.message.showMessage();
     });
     parent.append(item);
   }

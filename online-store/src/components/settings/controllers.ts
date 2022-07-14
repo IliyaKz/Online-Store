@@ -4,6 +4,7 @@ import { Sorting } from './sorting';
 import { Search } from './search';
 import { Reset } from './reset';
 import { Basket } from './basket';
+import { Message } from './message';
 import { TemplateKeeper } from '../products/productTemplate';
  
 class Controller {
@@ -21,6 +22,8 @@ class Controller {
 
   template: TemplateKeeper;
 
+  message: Message;
+
   constructor() {
     this.checkbox = new Checkbox;
     this.ranges = new RangeSlider;
@@ -29,6 +32,7 @@ class Controller {
     this.reset = new Reset;
     this.basket = new Basket;
     this.template = new TemplateKeeper;
+    this.message = new Message;
   }
 
   drawCheckboxes(): void {
@@ -72,6 +76,10 @@ class Controller {
     this.ranges.getRanges();
     this.template.setTemplate();
     this.template.getTemplate();
+  }
+
+  showMessage(): void {
+    this.message.showMessage();
   }
 }
 
