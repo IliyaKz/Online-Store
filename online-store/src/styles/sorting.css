@@ -1,0 +1,68 @@
+.sorting-text {
+  margin: 5px;
+  font-size: 16px;
+  color: #fbf9e5; 
+}
+
+.select {
+  position: relative;
+  width: 250px;
+  color: #01220e;
+}
+
+.select-header {
+  border: solid 3px #01220e;
+  display: flex;
+  background-color: #fbf9e5;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 5px;
+  padding-right: 5px;
+}
+
+.select-icon {
+  width: 20px;
+  height: 20px;
+  background-image: url('../assets/svg/downarrow.svg');
+  align-self: center;
+}
+
+.select-current-value {
+  line-height: 24px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.select-body {
+  border-radius: 5px;
+  background-color: #fbf6e5;
+  border: solid 3px #01220e;
+  border-top: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 120%;
+  z-index: 3;
+  display: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.select-body.select-open {
+  display: block;
+}
+
+.select-item {
+  line-height: 24px;
+  font-size: 16px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.select-item:hover {
+  background-color: #c6b26d;
+}
+
+.select-header:hover {
+  border: solid 3px #036a37;
+}

@@ -36,17 +36,17 @@ class Controller {
   }
 
   drawCheckboxes(): void {
-    this.checkbox.createCheckbox('africa', 'Африка', 'country');
-    this.checkbox.createCheckbox('america', 'Америка', 'country');
-    this.checkbox.createCheckbox('eurasia', 'Евразия', 'country');
+    this.checkbox.createCheckbox('africa', 'Африка', 'country', 'Африка');
+    this.checkbox.createCheckbox('america', 'Америка', 'country', 'Америка');
+    this.checkbox.createCheckbox('eurasia', 'Евразия', 'country', 'Евразия');
     this.checkbox.createCheckbox('yellow', 'Желтый', 'color');
     this.checkbox.createCheckbox('red', 'Красный', 'color');
     this.checkbox.createCheckbox('green', 'Зеленый', 'color');
     this.checkbox.createCheckbox('blue', 'Синий', 'color');
-    this.checkbox.createCheckbox('zero-horns', '0', 'horns');
-    this.checkbox.createCheckbox('one-horns', '1', 'horns');
-    this.checkbox.createCheckbox('two-horns', '2', 'horns');
-    this.checkbox.createCheckbox('three-horns', '3', 'horns');
+    this.checkbox.createCheckbox('zero-horns', '0', 'horns', '0');
+    this.checkbox.createCheckbox('one-horns', '1', 'horns', '1');
+    this.checkbox.createCheckbox('two-horns', '2', 'horns', '2');
+    this.checkbox.createCheckbox('three-horns', '3', 'horns', '3');
     this.checkbox.createCheckbox('popularity', 'Да', 'popularity');
   }
 

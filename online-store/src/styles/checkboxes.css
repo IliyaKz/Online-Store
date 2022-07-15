@@ -1,0 +1,144 @@
+.filters-text {
+  margin: 5px;
+  font-size: 16px;
+  color: #fbf9e5; 
+}
+
+.color-sorting,
+.country-sorting,
+.horns-sorting,
+.popularity-sorting {
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+}
+
+.checkbox {
+  position: absolute;
+  left: -9999px;
+}
+
+.country-label,
+.horns-label,
+.popularity-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbf9e5;
+  border-radius: 5px;
+  border: solid 3px #01220e;
+  font-size: 16px;
+  color: #01220e;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+.country-label {
+  min-height: 30px;
+  min-width: 70px;
+}
+
+.horns-label {
+  min-height: 30px;
+  min-width: 30px;
+}
+
+.popularity-label {
+  position: relative;
+  min-height: 30px;
+  min-width: 30px;
+}
+
+.color-label {
+  display: block;
+  min-height: 30px;
+  min-width: 30px;
+  position: relative;
+  cursor: pointer;
+  padding: 5px;
+  transition: 0.3s;
+  border-radius: 5px;
+  border: solid 3px #01220e;
+}
+
+.color-label.yellow {
+  background: linear-gradient(-45deg, #946b04 10%, #f6e52b 50%, #edf4a0 90%);
+}
+
+.color-label.red {
+  background: linear-gradient(-45deg, #371102 10%, #c80000 50%, #fa5b16 90%);
+}
+
+.color-label.green {
+  background: linear-gradient(-45deg, #02351f 10%, #058b10 50%, #82f913 90%);
+}
+
+.color-label.blue {
+  background: linear-gradient(-45deg, #29073f 10%, #032ab8 50%, #13b0f9 90%);
+}
+
+.country-label:hover,
+.horns-label:hover,
+.popularity-label:hover {
+  background-color: #c6b26d;
+}
+
+.country-label:active,
+.horns-label:active,
+.popularity-label:active {
+  background-color: #c6b26d;
+  border: solid 3px #036a37;
+  color: #036a37;
+}
+
+.color-label:active {
+  border: solid 3px #036a37;
+}
+
+.country-checkbox:checked + .country-label,
+.horns-checkbox:checked + .horns-label,
+.popularity-checkbox:checked + .popularity-label {
+  background-color: #4af26e;
+  border: solid 3px #036a37;
+}
+
+.color-checkbox:checked + .color-label {
+  border: solid 3px #036a37;
+}
+
+.country-checkbox:checked + .country-label:hover,
+.country-checkbox:checked + .country-label:active,
+.horns-checkbox:checked + .horns-label:hover,
+.horns-checkbox:checked + .horns-label:active
+.popularity-checkbox:checked + .popularity-label:hover,
+.popularity-checkbox:checked + .popularity-label:active {
+  background-color: #036a37;
+  border: solid 3px #01220e;
+}
+
+.popularity-label::after,
+.color-label::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  transition: all 0.2s ease;
+  left: 10px;
+  top: 10px;
+  width: 20px;
+  height: 15px;
+  border-bottom: solid 5px #01220e;
+  border-left: solid 5px #01220e;
+  background-color: transparent;
+  transform: rotate(-45deg);
+}
+
+.popularity-checkbox:checked + .popularity-label::after,
+.color-checkbox:checked + .color-label::after {
+  opacity: 1;
+}
+
+.popularity-checkbox:not(:checked) + .popularity-label::after,
+.color-checkbox:not(:checked) + .color-label::after {
+  opacity: 0;
+}

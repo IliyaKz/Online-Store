@@ -5,6 +5,7 @@ import { IFilterStats } from '../interfacesAndTypes';
 import { Sorting } from './sorting';
 import { Reset } from './reset';
 import { Message } from './message';
+import '../../styles/checkboxes.css';
 
 class Checkbox {
 
@@ -36,17 +37,17 @@ class Checkbox {
     }
   }
 
-  createCheckbox(name: string, text: string, prop: keyof IFilterStats): void {
+  createCheckbox(name: string, text: string, prop: keyof IFilterStats, labelText?: string): void {
     const target = document.querySelector(`.${prop}-sorting`) as HTMLElement;
     const checkboxContainer = document.createElement('div') as HTMLElement;
-    checkboxContainer.classList.add('checkbox-container');
+    checkboxContainer.classList.add(`${prop}-checkbox-container`);
     const checkbox = document.createElement('input') as HTMLInputElement;
     checkbox.type = 'checkbox';
     checkbox.id = name;
     if (Checkbox.currentCheckboxes.includes(name)) {
       checkbox.checked = true;
     }
-    checkbox.classList.add(`${prop}-checkbox`);
+    checkbox.classList.add(`${prop}-checkbox`, 'checkbox');
     checkbox.addEventListener(('click'), () => {
       if (checkbox.checked) {
         if (TemplateKeeper.currentTemplate[prop].length === TemplateKeeper.defaultTemplate[prop].length) {
@@ -73,6 +74,9 @@ class Checkbox {
     const label = document.createElement('label') as HTMLLabelElement;
     label.classList.add(`${prop}-label`, name);
     label.htmlFor = name;
+    if (labelText !== undefined) {
+      label.innerText = labelText;
+    }
     checkboxContainer.append(checkbox);
     checkboxContainer.append(label);
     target.append(checkboxContainer);

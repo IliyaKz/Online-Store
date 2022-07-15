@@ -5,6 +5,7 @@ import { Sorting } from './sorting';
 import { IFilterStats } from '../interfacesAndTypes';
 import { Checkbox } from './checkboxes';
 import { RangeSlider } from './rangeSliders';
+import '../../styles/reset.css';
 
 class Reset {
   static isSaveAllowed = true;
@@ -22,7 +23,7 @@ class Reset {
     const target = document.querySelector('.resets') as HTMLElement;
     const wrapper = document.createElement('div') as HTMLElement;
     const resetFilterButton = document.createElement('button') as HTMLButtonElement;
-    resetFilterButton.classList.add('button', 'reset-filter-button');
+    resetFilterButton.classList.add('reset-button', 'reset-filter-button');
     resetFilterButton.innerText = 'Сбросить фильтры';
     resetFilterButton.addEventListener('click', () => {
       const resetEvent = new Event('resetEvent', {
@@ -51,7 +52,7 @@ class Reset {
     const target = document.querySelector('.resets') as HTMLElement;
     const wrapper = document.createElement('div') as HTMLElement;
     const resetFilterButton = document.createElement('button') as HTMLButtonElement;
-    resetFilterButton.classList.add('button', 'reset-storage-button');
+    resetFilterButton.classList.add('reset-button', 'reset-storage-button');
     resetFilterButton.innerText = 'Сбросить настройки';
     resetFilterButton.addEventListener('click', () => {
       Reset.isSaveAllowed = false;

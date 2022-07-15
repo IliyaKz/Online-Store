@@ -1,0 +1,69 @@
+.basket {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.basket-background {
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/svg/basket.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+.basket-counter {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  left: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Oswald';
+  background-color: #fbf9e5;
+  color: #842222;
+  border: solid 3px #842222;
+  border-radius: 50%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.basket-message-container {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  top: 0;
+  z-index: 4;
+}
+
+.basket-message-container.message-shown {
+  display: flex;
+}
+
+.basket-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  border: solid 3px #842222;
+  background-color: #ffffff;
+  color: #842222;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Oswald';
+  border-radius: 10px;
+  margin-top: 70px;
+}

@@ -1,4 +1,5 @@
 import { Reset } from './reset';
+import '../../styles/basket.css';
 
 class Basket {
 
@@ -20,6 +21,8 @@ class Basket {
 
   createBasket(): void {
     const target = document.querySelector('.basket') as HTMLElement;
+    const background =  document.createElement('div') as HTMLElement;
+    background.classList.add('basket-background');
     const counter = document.createElement('div') as HTMLElement;
     counter.classList.add('basket-counter');
     counter.innerText = '0';
@@ -28,9 +31,14 @@ class Basket {
     }
     const messageContainer = document.createElement('div') as HTMLElement;
     messageContainer.classList.add('basket-message-container');
+    messageContainer.addEventListener('click', () => {
+      messageContainer.classList.remove('message-shown');
+    });
     const message = document.createElement('div') as HTMLElement;
     message.classList.add('basket-message');
+    message.innerText = 'Извините, все слоты корзины заполнены';
     target.append(counter);
+    target.append(background);
     target.append(messageContainer);
     messageContainer.append(message);
     this.getContent();

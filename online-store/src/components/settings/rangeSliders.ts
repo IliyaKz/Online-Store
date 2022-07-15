@@ -5,6 +5,7 @@ import { IFilterStats, IRangeTemplate } from '../interfacesAndTypes';
 import { Sorting } from './sorting';
 import { Reset } from './reset';
 import { Message } from './message';
+import '../../styles/ranges.css';
 import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 

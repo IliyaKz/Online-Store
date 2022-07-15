@@ -2,7 +2,6 @@ import { ProductCreator } from '../products/productCreator';
 import { Controller } from '../settings/controllers';
 import { Basket } from '../settings/basket';
 import { ProductStartDrawer } from '../products/productStartDrawer';
-import { Reset } from '../settings/reset';
 
 class App {
   creator: ProductCreator;

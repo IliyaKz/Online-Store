@@ -4,6 +4,7 @@ import { TemplateKeeper } from '../products/productTemplate';
 import { Sorting } from './sorting';
 import { Reset } from './reset';
 import { Message } from './message';
+import '../../styles/search.css';
 
 class Search {
   creator: ProductCreator;

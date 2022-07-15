@@ -3,6 +3,7 @@ import { Product } from '../products/product';
 import { TemplateKeeper } from '../products/productTemplate';
 import { Reset } from './reset';
 import { Message } from './message';
+import '../../styles/sorting.css';
 
 class Sorting {
 
