@@ -1,11 +1,11 @@
 import { ProductStartDrawer } from '../products/productStartDrawer';
 import { TemplateKeeper } from '../products/productTemplate';
-import { IFilterStats } from '../interfacesAndTypes';
+import { IFilterStats, IReset } from '../interfacesAndTypes';
 import { Checkbox } from './checkboxes';
 import { RangeSlider } from './rangeSliders';
 import '../../styles/reset.css';
 
-class Reset {
+class Reset implements IReset {
   static isSaveAllowed = true;
 
   productDrawer: ProductStartDrawer;

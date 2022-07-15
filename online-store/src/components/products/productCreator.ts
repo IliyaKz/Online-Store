@@ -1,9 +1,9 @@
-import { IProductStats } from '../interfacesAndTypes';
+import { IProductStats, IProdCreator } from '../interfacesAndTypes';
 import { list } from './productsList';
 import { Product } from './product';
 import { IFilterStats } from '../interfacesAndTypes';
 
-class ProductCreator {
+class ProductCreator implements IProdCreator {
   data: Array<IProductStats>;
 
   static productArray: Array<Product> = [];

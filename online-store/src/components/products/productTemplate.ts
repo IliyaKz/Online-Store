@@ -1,16 +1,6 @@
 import { IFilterStats, IFilterStatsConst } from '../interfacesAndTypes';
 import { Reset } from '../settings/reset';
 
-const template: IFilterStats = {
-  name: [''],
-  country: ['Африка', 'Америка', 'Евразия'],
-  horns: ['0', '1', '2', '3'],
-  color: ['Желтый', 'Красный', 'Зеленый', 'Синий'],
-  amount: ['2', '19'],
-  size: ['2', '17'],
-  popularity: ['Да', 'Нет'],
-};
-
 class TemplateKeeper {
   static currentTemplate: IFilterStats = {
     name: [''],
@@ -52,4 +42,4 @@ class TemplateKeeper {
   }
 }
 
-export { template, TemplateKeeper };
+export { TemplateKeeper };

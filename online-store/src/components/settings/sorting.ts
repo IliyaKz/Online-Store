@@ -3,9 +3,10 @@ import { Product } from '../products/product';
 import { TemplateKeeper } from '../products/productTemplate';
 import { Reset } from './reset';
 import { Message } from './message';
+import { ISorting } from '../interfacesAndTypes';
 import '../../styles/sorting.css';
 
-class Sorting {
+class Sorting implements ISorting {
 
   creator: ProductCreator;
 

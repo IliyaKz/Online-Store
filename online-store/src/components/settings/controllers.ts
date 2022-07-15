@@ -6,8 +6,9 @@ import { Reset } from './reset';
 import { Basket } from './basket';
 import { Message } from './message';
 import { TemplateKeeper } from '../products/productTemplate';
+import { IControllers } from '../interfacesAndTypes';
  
-class Controller {
+class Controller implements IControllers {
   checkbox: Checkbox;
 
   ranges: RangeSlider;

@@ -2,9 +2,10 @@ import { ProductStartDrawer } from '../products/productStartDrawer';
 import { TemplateKeeper } from '../products/productTemplate';
 import { Reset } from './reset';
 import { Message } from './message';
+import { ISearch } from '../interfacesAndTypes';
 import '../../styles/search.css';
 
-class Search {
+class Search implements ISearch {
   productDrawer: ProductStartDrawer;
 
   message: Message;

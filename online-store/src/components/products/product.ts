@@ -1,15 +1,15 @@
-import { IProductStats } from '../interfacesAndTypes';
+import { IProductStats, IProduct } from '../interfacesAndTypes';
 import { Basket } from '../settings/basket';
 import '../../styles/product.css';
 
-class Product {
+class Product implements IProduct {
   data: IProductStats;
 
   constructor(source: IProductStats) {
     this.data = source;
   }
 
-  addProperty(prop: string, target: HTMLElement, propName?: string) {
+  addProperty(prop: string, target: HTMLElement, propName?: string): void {
     const el =  document.createElement('p') as HTMLElement;
     el.classList.add('product-property');
     el.innerHTML = (propName !== undefined) ? `${propName}: ${prop}` : `${prop}`;

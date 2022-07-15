@@ -2,8 +2,9 @@ import { ProductCreator } from './productCreator';
 import { Product } from './product';
 import { Sorting } from '../settings/sorting';
 import { TemplateKeeper } from '../products/productTemplate';
+import { IProdStartDrawing } from '../interfacesAndTypes';
 
-class ProductStartDrawer {
+class ProductStartDrawer implements IProdStartDrawing {
   creator: ProductCreator;
 
   sorting: Sorting;

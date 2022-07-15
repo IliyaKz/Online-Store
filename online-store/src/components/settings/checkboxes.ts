@@ -1,11 +1,11 @@
 import { ProductStartDrawer } from '../products/productStartDrawer';
 import { TemplateKeeper } from '../products/productTemplate';
-import { IFilterStats } from '../interfacesAndTypes';
+import { IFilterStats, ICheckboxes } from '../interfacesAndTypes';
 import { Reset } from './reset';
 import { Message } from './message';
 import '../../styles/checkboxes.css';
 
-class Checkbox {
+class Checkbox implements ICheckboxes {
 
   productDrawer: ProductStartDrawer;
 

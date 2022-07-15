@@ -1,7 +1,8 @@
 import { Reset } from './reset';
+import { IBasket } from '../interfacesAndTypes';
 import '../../styles/basket.css';
 
-class Basket {
+class Basket implements IBasket {
 
   static basketContent: Array<string> = [];
 

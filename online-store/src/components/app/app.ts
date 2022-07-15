@@ -2,8 +2,9 @@ import { ProductCreator } from '../products/productCreator';
 import { Controller } from '../settings/controllers';
 import { Basket } from '../settings/basket';
 import { ProductStartDrawer } from '../products/productStartDrawer';
+import { IApp } from '../interfacesAndTypes';
 
-class App {
+class App implements IApp {
   creator: ProductCreator;
 
   controller: Controller;

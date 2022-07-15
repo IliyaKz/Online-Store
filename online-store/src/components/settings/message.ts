@@ -1,4 +1,6 @@
-class Message {
+import { IMessage } from '../interfacesAndTypes';
+
+class Message implements IMessage {
 
   showMessage(): void {
     const products  = document.querySelector('.products') as HTMLElement;

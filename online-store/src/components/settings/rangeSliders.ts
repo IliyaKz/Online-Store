@@ -1,13 +1,13 @@
 import { TemplateKeeper } from '../products/productTemplate';
 import { ProductStartDrawer } from '../products/productStartDrawer';
-import { IFilterStats, IRangeTemplate } from '../interfacesAndTypes';
+import { IFilterStats, IRangeTemplate, IRanges } from '../interfacesAndTypes';
 import { Reset } from './reset';
 import { Message } from './message';
 import '../../styles/ranges.css';
 import * as noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 
-class RangeSlider {
+class RangeSlider implements IRanges {
 
   message: Message;
 
