@@ -1,8 +1,6 @@
-import { ProductCreator } from '../products/productCreator';
-import { Product } from '../products/product';
 import { TemplateKeeper } from '../products/productTemplate';
+import { ProductStartDrawer } from '../products/productStartDrawer';
 import { IFilterStats, IRangeTemplate } from '../interfacesAndTypes';
-import { Sorting } from './sorting';
 import { Reset } from './reset';
 import { Message } from './message';
 import '../../styles/ranges.css';
@@ -11,11 +9,9 @@ import 'nouislider/dist/nouislider.css';
 
 class RangeSlider {
 
-  creator: ProductCreator;
-
-  sorting: Sorting;
-
   message: Message;
+
+  productDrawer: ProductStartDrawer;
 
   static currentRanges: IRangeTemplate = {
     size: [],
@@ -23,9 +19,8 @@ class RangeSlider {
   };
 
   constructor() {
-    this.creator = new ProductCreator;
-    this.sorting = new Sorting();
     this.message = new Message;
+    this.productDrawer = new ProductStartDrawer;
   }
 
   setRanges(): void {
@@ -74,9 +69,7 @@ class RangeSlider {
       RangeSlider.currentRanges[prop as keyof IRangeTemplate] = values.map(item => +item);
       TemplateKeeper.currentTemplate[prop][0] = (+(values[0])).toString();
       TemplateKeeper.currentTemplate[prop][1] = (+(values[1])).toString();
-      let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
-      result = this.sorting.sortingProducts(result);
-      this.creator.drawProducts(result);
+      this.productDrawer.drawProducts();
       this.message.showMessage();
     });
     document.addEventListener(('resetEvent'), () => {

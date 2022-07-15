@@ -1,21 +1,16 @@
-import { ProductCreator } from '../products/productCreator';
-import { Product } from '../products/product';
+import { ProductStartDrawer } from '../products/productStartDrawer';
 import { TemplateKeeper } from '../products/productTemplate';
-import { Sorting } from './sorting';
 import { Reset } from './reset';
 import { Message } from './message';
 import '../../styles/search.css';
 
 class Search {
-  creator: ProductCreator;
-
-  sorting: Sorting;
+  productDrawer: ProductStartDrawer;
 
   message: Message;
 
   constructor() {
-    this.creator = new ProductCreator();
-    this.sorting = new Sorting();
+    this.productDrawer = new ProductStartDrawer;
     this.message = new Message;
   }
 
@@ -35,9 +30,7 @@ class Search {
     }
     input.addEventListener('input', () => {
       TemplateKeeper.currentTemplate.name[0] = input.value;
-      let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
-      result = this.sorting.sortingProducts(result);
-      this.creator.drawProducts(result);
+      this.productDrawer.drawProducts();
       this.message.showMessage();
     });
     document.addEventListener(('resetEvent'), () => {

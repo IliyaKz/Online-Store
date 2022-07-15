@@ -1,7 +1,5 @@
-import { ProductCreator } from '../products/productCreator';
-import { Product } from '../products/product';
+import { ProductStartDrawer } from '../products/productStartDrawer';
 import { TemplateKeeper } from '../products/productTemplate';
-import { Sorting } from './sorting';
 import { IFilterStats } from '../interfacesAndTypes';
 import { Checkbox } from './checkboxes';
 import { RangeSlider } from './rangeSliders';
@@ -10,13 +8,10 @@ import '../../styles/reset.css';
 class Reset {
   static isSaveAllowed = true;
 
-  creator: ProductCreator;
-
-  sorting: Sorting;
+  productDrawer: ProductStartDrawer;
 
   constructor() {
-    this.creator = new ProductCreator;
-    this.sorting = new Sorting();
+    this.productDrawer = new ProductStartDrawer;
   }
 
   createResetFilterButton(): void {
@@ -40,9 +35,7 @@ class Reset {
         const str = JSON.stringify(TemplateKeeper.defaultTemplate[key]);
         TemplateKeeper.currentTemplate[key] = JSON.parse(str);
       }
-      let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.defaultTemplate, ProductCreator.productArray);
-      result = this.sorting.sortingProducts(result);
-      this.creator.drawProducts(result);
+      this.productDrawer.drawProducts();
     });
     target.append(wrapper);
     wrapper.append(resetFilterButton);

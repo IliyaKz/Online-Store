@@ -1,25 +1,20 @@
-import { ProductCreator } from '../products/productCreator';
-import { Product } from '../products/product';
+import { ProductStartDrawer } from '../products/productStartDrawer';
 import { TemplateKeeper } from '../products/productTemplate';
 import { IFilterStats } from '../interfacesAndTypes';
-import { Sorting } from './sorting';
 import { Reset } from './reset';
 import { Message } from './message';
 import '../../styles/checkboxes.css';
 
 class Checkbox {
 
-  creator: ProductCreator;
-
-  sorting: Sorting;
+  productDrawer: ProductStartDrawer;
 
   message: Message;
 
   static currentCheckboxes: Array<string> = [];
 
   constructor() {
-    this.creator = new ProductCreator();
-    this.sorting = new Sorting();
+    this.productDrawer = new ProductStartDrawer;
     this.message = new Message;
   }
 
@@ -63,9 +58,7 @@ class Checkbox {
         }
         Checkbox.currentCheckboxes = Checkbox.currentCheckboxes.filter(item => item != name);
       }
-      let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
-      result = this.sorting.sortingProducts(result);
-      this.creator.drawProducts(result);
+      this.productDrawer.drawProducts();
       this.message.showMessage();
     });
     document.addEventListener(('resetEvent'), () => {
