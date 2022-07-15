@@ -88,4 +88,34 @@
   justify-content: center;
 }
 
+.footer {
+    width: 90%;
+    height: 90px;
+    padding: 10px 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+.git-link,
+.course-link,
+.course-logo {
+    transition: 0.5s;
+}
+.git-link {
+    text-decoration: none;
+}
+.git-link,
+.date {
+    font-family: inherit;
+    font-size: 30px;
+    color: #fbf6e5;
+}
+.git-link:hover {
+    color: #c6b26d;
+}
+.course-logo:hover {
+    transform: scale(1.2);
+}
 
