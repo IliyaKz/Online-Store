@@ -1,7 +1,7 @@
 .filters-text {
   margin: 5px;
   font-size: 16px;
-  color: #fbf9e5; 
+  color: var(--beige-light); 
 }
 
 .color-sorting,
@@ -24,11 +24,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fbf9e5;
+  background-color: var(--beige-light);
   border-radius: 5px;
-  border: solid 3px #01220e;
+  border: solid 3px var(--green-dark);
   font-size: 16px;
-  color: #01220e;
+  color: var(--green-dark);
   cursor: pointer;
   padding: 5px;
   transition: 0.3s;
@@ -59,7 +59,7 @@
   padding: 5px;
   transition: 0.3s;
   border-radius: 5px;
-  border: solid 3px #01220e;
+  border: solid 3px var(--green-dark);
 }
 
 .color-label.yellow {
@@ -81,30 +81,30 @@
 .country-label:hover,
 .horns-label:hover,
 .popularity-label:hover {
-  background-color: #c6b26d;
+  background-color: var(--beige-dark);
 }
 
 .country-label:active,
 .horns-label:active,
 .popularity-label:active {
-  background-color: #c6b26d;
-  border: solid 3px #036a37;
-  color: #036a37;
+  background-color: var(--beige-dark);
+  border: solid 3px var(--green-base);
+  color: var(--green-base);
 }
 
 .color-label:active {
-  border: solid 3px #036a37;
+  border: solid 3px var(--green-base);
 }
 
 .country-checkbox:checked + .country-label,
 .horns-checkbox:checked + .horns-label,
 .popularity-checkbox:checked + .popularity-label {
-  background-color: #4af26e;
-  border: solid 3px #036a37;
+  background-color: var(--green-light);
+  border: solid 3px var(--green-base);
 }
 
 .color-checkbox:checked + .color-label {
-  border: solid 3px #036a37;
+  border: solid 3px var(--green-base);
 }
 
 .country-checkbox:checked + .country-label:hover,
@@ -113,8 +113,8 @@
 .horns-checkbox:checked + .horns-label:active
 .popularity-checkbox:checked + .popularity-label:hover,
 .popularity-checkbox:checked + .popularity-label:active {
-  background-color: #036a37;
-  border: solid 3px #01220e;
+  background-color: var(--green-base);
+  border: solid 3px var(--green-dark);
 }
 
 .popularity-label::after,
@@ -127,8 +127,8 @@
   top: 10px;
   width: 20px;
   height: 15px;
-  border-bottom: solid 5px #01220e;
-  border-left: solid 5px #01220e;
+  border-bottom: solid 5px var(--green-dark);
+  border-left: solid 5px var(--green-dark);
   background-color: transparent;
   transform: rotate(-45deg);
 }

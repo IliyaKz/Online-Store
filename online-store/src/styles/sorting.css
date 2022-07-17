@@ -1,19 +1,19 @@
 .sorting-text {
   margin: 5px;
   font-size: 16px;
-  color: #fbf9e5; 
+  color: var(--beige-light); 
 }
 
 .select {
   position: relative;
   width: 250px;
-  color: #01220e;
+  color: var(--green-dark);
 }
 
 .select-header {
-  border: solid 3px #01220e;
+  border: solid 3px var(--green-dark);
   display: flex;
-  background-color: #fbf9e5;
+  background-color: var(--beige-light);
   justify-content: space-between;
   cursor: pointer;
   border-radius: 5px;
@@ -35,8 +35,8 @@
 
 .select-body {
   border-radius: 5px;
-  background-color: #fbf6e5;
-  border: solid 3px #01220e;
+  background-color: var(--beige-light);
+  border: solid 3px var(--green-dark);
   border-top: 0;
   position: absolute;
   left: 0;
@@ -60,9 +60,9 @@
 }
 
 .select-item:hover {
-  background-color: #c6b26d;
+  background-color: var(--beige-dark);
 }
 
 .select-header:hover {
-  border: solid 3px #036a37;
+  border: solid 3px var(--green-base);
 }

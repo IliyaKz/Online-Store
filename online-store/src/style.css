@@ -1,3 +1,5 @@
+@import './styles/variables.css';
+
 .body {
   background: url("./assets/img/background.jpg");
   background-size: auto;
@@ -24,14 +26,14 @@
 
 .main-title {
   font-size: 32px;
-  color: #fbf9e5;
+  color: var(--beige-light);
   font-family: 'Oswald';
   margin: 0;
 }
 
 .subtitle {
   font-size: 16px;
-  color: #fbf9e5;
+  color: var(--beige-light);
   font-family: 'Oswald';
   margin: 0;
 }
@@ -58,17 +60,6 @@
   height: 100%;
 }
 
-.message {
-  position: absolute;
-  top: 300px;
-  left: 300px;
-  background-color: #fff;
-}
-
-.message-hidden {
-  display: none;
-}
-
 .settings {
   display: flex;
   flex-direction: column;
@@ -79,7 +70,7 @@
 
 .no-find-message {
   font-size: 48px;
-  color: #84ba96;
+  color: var(--green-grey);
   display: none;
 }
 
@@ -110,10 +101,10 @@
 .date {
     font-family: inherit;
     font-size: 30px;
-    color: #fbf6e5;
+    color: var(--beige-light);
 }
 .git-link:hover {
-    color: #c6b26d;
+    color: var(--beige-dark);
 }
 .course-logo:hover {
     transform: scale(1.2);

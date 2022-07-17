@@ -7,7 +7,7 @@
 .range-text {
   margin: 5px;
   font-size: 16px;
-  color: #fbf9e5; 
+  color: var(--beige-light); 
 }
 
 .amount-range,
@@ -28,9 +28,9 @@
 .size-value-right {
   min-width: 30px;
   min-height: 30px;
-  border: solid 2px #01220e;
-  background-color: #fbf9e5;
-  color: #01220e;
+  border: solid 2px var(--green-dark);
+  background-color: var(--beige-light);
+  color: var(--green-dark);
   font-size: 16px;
   border-radius: 5px;
   text-align: center;
@@ -38,28 +38,28 @@
 }
 
 .noUi-connect {
-  background-color: #4af26e !important;
+  background-color: var(--green-light) !important;
 }
 .noUi-handle {
-  border: 2px solid #01220e !important;
+  border: 2px solid var(--green-dark) !important;
   border-radius: 5px !important;
-  background: #fbf9e5 !important;
+  background: var(--beige-light) !important;
   cursor: pointer !important;
   box-shadow: none !important;
   transition: 0.3s;
 }
 .noUi-handle:hover {
-  background: #c6b26d !important;
+  background: var(--beige-dark) !important;
 }
 .noUi-handle:active {
-  border: 2px solid #036a37 !important;
-  background: #c6b26d !important;
+  border: 2px solid var(--green-base) !important;
+  background: var(--beige-dark) !important;
 }
 .noUi-handle:before,
 .noUi-handle:after {
   height: 16px !important;
   width: 2px !important;
-  background: #01220e !important;
+  background: var(--green-dark) !important;
   left: 11px !important;
   top: 4px !important;
   border-radius: 1px;
@@ -69,5 +69,5 @@
 }
 .noUi-handle:active:before,
 .noUi-handle:active:after {
-  background: #036a37 !important;
+  background: var(--green-base) !important;
 }

@@ -3,8 +3,8 @@
   width: 300px;
   height: 240px;
   flex-direction: column;
-  background-color: #fbf9e5;
-  border: solid 4px #036a37;
+  background-color: var(--beige-light);
+  border: solid 4px var(--green-base);
   font-family: 'Oswald';
   border-radius: 5px;
   transition: 0.3s;
@@ -14,8 +14,8 @@
   margin: 0;
   padding: 5px;
   text-align: center;
-  background-color: #01220e;
-  color: #fbf9e5;
+  background-color: var(--green-dark);
+  color: var(--beige-light);
   transition: 0.3s;
 }
 
@@ -33,12 +33,12 @@
 }
 
 .product-item.product-added {
-  border: solid 4px #4af26e;
-  background-color: #c6b26d;
+  border: solid 4px var(--green-light);
+  background-color: var(--beige-dark);
 }
 
 .product-item.product-added .product-header {
-  background-color: #036a37;
+  background-color: var(--green-base);
 }
 
 .product-img {
@@ -51,12 +51,12 @@
 .product-property {
   margin: 0;
   font-size: 14px;
-  color: #01220e;
+  color: var(--green-dark);
 }
 
 .product-btn {
   margin-top: 5px;
-  border: solid 3px #01220e;
+  border: solid 3px var(--green-dark);
   border-radius: 5px;
   width: 90px;
   cursor: pointer;
@@ -68,13 +68,13 @@
 }
 
 .product-btn:active {
-  color: #fbf9e5
+  color: var(--beige-light)
 }
 
 .product-btn-add {
-  background: #4af26e;
+  background: var(--green-light);
 }
 
 .product-btn-remove {
-  background: #f43636;
+  background: var(--red-light);
 }

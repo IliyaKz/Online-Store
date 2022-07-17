@@ -11,21 +11,21 @@
   height: 40px;
   font-size: 16px;
   font-family: 'Oswald';
-  color: #01220e;
-  background-color: #fbf9e5;
-  border: 2px solid #01220e;
+  color: var(--green-dark);
+  background-color: var(--beige-light);
+  border: 2px solid var(--green-dark);
   border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .reset-button:hover {
-  border: 2px solid #036a37;
+  border: 2px solid var(--green-base);
   font-size: 18px;
 }
 
 .reset-button:active {
-  border: 2px solid #036a37;
+  border: 2px solid var(--green-base);
   font-size: 18px;
-  background-color: #4af26e;
+  background-color: var(--green-light);
 }
