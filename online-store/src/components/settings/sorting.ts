@@ -17,7 +17,8 @@ class Sorting implements ISorting {
     this.message = new Message;
   }
 
-  sortingProducts(array: Array<Product>): Array<Product> {
+  sortingProducts(array: Array<Product>): Array<Product> | void {
+    if (document.querySelector('.select-current-value') === undefined) return;
     const param = (document.querySelector('.select-current-value') as HTMLElement).innerText;
     const arrayCopy = array;
     let res: number;
@@ -56,7 +57,7 @@ class Sorting implements ISorting {
       parent.classList.remove('select-open');
       current.innerText = text;
       let arr: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
-      arr = this.sortingProducts(arr);
+      arr = this.sortingProducts(arr) as Array<Product>;
       this.creator.drawProducts(arr);
       this.message.showMessage();
     });
@@ -65,6 +66,7 @@ class Sorting implements ISorting {
 
   createSelect(): void {
     const target = document.querySelector('.select') as HTMLElement;
+    if (target === undefined) return;
     const header = document.createElement('div') as HTMLElement;
     header.classList.add('select-header');
     const current = document.createElement('div') as HTMLElement;

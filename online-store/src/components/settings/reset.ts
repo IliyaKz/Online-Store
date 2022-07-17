@@ -16,6 +16,7 @@ class Reset implements IReset {
 
   createResetFilterButton(): void {
     const target = document.querySelector('.resets') as HTMLElement;
+    if (target === undefined) return;
     const wrapper = document.createElement('div') as HTMLElement;
     const resetFilterButton = document.createElement('button') as HTMLButtonElement;
     resetFilterButton.classList.add('reset-button', 'reset-filter-button');
@@ -43,6 +44,7 @@ class Reset implements IReset {
 
   createResetStorageButton(): void {
     const target = document.querySelector('.resets') as HTMLElement;
+    if (target === undefined) return;
     const wrapper = document.createElement('div') as HTMLElement;
     const resetFilterButton = document.createElement('button') as HTMLButtonElement;
     resetFilterButton.classList.add('reset-button', 'reset-storage-button');

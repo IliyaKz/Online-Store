@@ -21,6 +21,7 @@ class ProductCreator implements IProdCreator {
 
   drawProducts(arr: Array<Product>): void {
     const products = document.querySelector('.products') as HTMLElement;
+    if (products === undefined) return;
     products.innerHTML = '';
     arr.forEach((item) => {
       item.create();

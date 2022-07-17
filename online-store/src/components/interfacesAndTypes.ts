@@ -44,7 +44,7 @@ interface IMessage {
 interface ISorting {
   creator: IProdCreator;
   message: IMessage;
-  sortingProducts(array: Array<IProduct>): Array<IProduct>;
+  sortingProducts(array: Array<IProduct>): Array<IProduct> | void;
   createSelectItem(text: string, parent: HTMLElement, current: HTMLElement): void;
   createSelect(): void;
 }

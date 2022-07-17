@@ -17,6 +17,7 @@ class Search implements ISearch {
 
   createSearch(): void {
     const target = document.querySelector('.search') as HTMLElement;
+    if (target === undefined) return;
     const form = document.createElement('form') as HTMLFormElement;
     form.classList.add('search-form');
     const input = document.createElement('input') as HTMLInputElement;

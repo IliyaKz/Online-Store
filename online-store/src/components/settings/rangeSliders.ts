@@ -44,8 +44,11 @@ class RangeSlider implements IRanges {
 
   createRangeSlider(min: number, max: number, prop: (keyof IFilterStats | keyof IRangeTemplate)): void {
     const target = document.querySelector(`.${prop}-range-slider`) as noUiSlider.Instance;
+    if (target === undefined) return;
     const leftValueContainer = document.querySelector(`.${prop}-value-left`) as HTMLElement;
+    if (leftValueContainer === undefined) return;
     const rightValueContainer = document.querySelector(`.${prop}-value-right`) as HTMLElement;
+    if (rightValueContainer === undefined) return;
     noUiSlider.create(target, {
       start: [min, max],
       connect: true,

@@ -18,6 +18,7 @@ class Product implements IProduct {
 
   create(): void {
     const target = document.querySelector('.products') as HTMLElement;
+    if (target === undefined) return;
     const prodItem = document.createElement('div') as HTMLElement;
     prodItem.classList.add('product-item');
     if (Basket.basketContent.includes(this.data.name)) { prodItem.classList.add('product-added'); }
@@ -48,10 +49,12 @@ class Product implements IProduct {
     }
     prodButton.addEventListener(('click'), () => {
       const basket = document.querySelector('.basket-counter') as HTMLElement;
+      if (basket === undefined) return;
       const count: number = +(basket.innerHTML);
       if (!Basket.basketContent.includes(this.data.name)) {
         if (count === 20) {
           const message = document.querySelector('.basket-message-container') as HTMLElement;
+          if (message === undefined) return;
           message.classList.add('message-shown');
           return;
         } else {

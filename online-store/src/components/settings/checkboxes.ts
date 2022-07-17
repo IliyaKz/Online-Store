@@ -34,6 +34,7 @@ class Checkbox implements ICheckboxes {
 
   createCheckbox(name: string, text: string, prop: keyof IFilterStats, labelText?: string): void {
     const target = document.querySelector(`.${prop}-sorting`) as HTMLElement;
+    if (target === undefined) return;
     const checkboxContainer = document.createElement('div') as HTMLElement;
     checkboxContainer.classList.add(`${prop}-checkbox-container`);
     const checkbox = document.createElement('input') as HTMLInputElement;

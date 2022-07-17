@@ -16,7 +16,7 @@ class ProductStartDrawer implements IProdStartDrawing {
 
   drawProducts(): void {
     let result: Array<Product> = this.creator.filterProducts(TemplateKeeper.currentTemplate, ProductCreator.productArray);
-    result = this.sorting.sortingProducts(result);
+    result = this.sorting.sortingProducts(result)  as Array<Product>;
     this.creator.drawProducts(result);
   }
 

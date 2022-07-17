@@ -22,6 +22,7 @@ class Basket implements IBasket {
 
   createBasket(): void {
     const target = document.querySelector('.basket') as HTMLElement;
+    if (target === undefined) return;
     const background =  document.createElement('div') as HTMLElement;
     background.classList.add('basket-background');
     const counter = document.createElement('div') as HTMLElement;
