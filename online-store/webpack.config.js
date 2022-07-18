@@ -20,7 +20,17 @@ const baseConfig = {
           {
                 test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
                 type: 'asset/resource',
+                generator: {
+                  filename: 'assets/img/[name][ext]'
+                } 
         },
+        {
+          test: /\.(svg)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'assets/svg/[name][ext]'
+          } 
+  },
         ],
     },
     resolve: {
