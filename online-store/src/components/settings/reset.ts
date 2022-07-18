@@ -3,6 +3,7 @@ import { TemplateKeeper } from "../products/productTemplate";
 import { IFilterStats, IReset } from "../interfacesAndTypes";
 import { Checkbox } from "./checkboxes";
 import { RangeSlider } from "./rangeSliders";
+import { Message } from "./message";
 import "../../styles/reset.css";
 
 class Reset implements IReset {
@@ -10,8 +11,11 @@ class Reset implements IReset {
 
   productDrawer: ProductStartDrawer;
 
+  message: Message;
+
   constructor() {
     this.productDrawer = new ProductStartDrawer();
+    this.message = new Message();
   }
 
   createResetFilterButton(): void {
@@ -39,6 +43,7 @@ class Reset implements IReset {
         TemplateKeeper.currentTemplate[key] = JSON.parse(str);
       }
       this.productDrawer.drawProducts();
+      this.message.showMessage();
     });
     target.append(wrapper);
     wrapper.append(resetFilterButton);

@@ -94,6 +94,7 @@ interface IRanges {
 }
 
 interface IReset {
+  message: IMessage;
   productDrawer: IProdStartDrawing;
   createResetFilterButton(): void;
   createResetStorageButton(): void;
