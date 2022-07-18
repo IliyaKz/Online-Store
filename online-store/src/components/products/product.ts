@@ -9,7 +9,7 @@ class Product implements IProduct {
     this.data = source;
   }
 
-  addProperty(prop: string, target: HTMLElement, propName?: string): void {
+  addProperty<T>(prop: T, target: HTMLElement, propName?: string): void {
     const el =  document.createElement('p') as HTMLElement;
     el.classList.add('product-property');
     el.innerHTML = (propName !== undefined) ? `${propName}: ${prop}` : `${prop}`;
@@ -71,12 +71,12 @@ class Product implements IProduct {
       prodButton.classList.toggle('product-btn-remove');
       prodItem.classList.toggle('product-added');
     });
-    this.addProperty(this.data.country, prodProperties, 'Родина');
-    this.addProperty(this.data.horns, prodProperties, 'Рога');
-    this.addProperty(this.data.color, prodProperties, 'Цвет');
-    this.addProperty(this.data.amount, prodProperties, 'Количество');
-    this.addProperty(this.data.size, prodProperties, 'Длина, см');
-    this.addProperty(this.data.popularity, prodProperties, 'Популярность');
+    this.addProperty<string>(this.data.country, prodProperties, 'Родина');
+    this.addProperty<string>(this.data.horns, prodProperties, 'Рога');
+    this.addProperty<string>(this.data.color, prodProperties, 'Цвет');
+    this.addProperty<string>(this.data.amount, prodProperties, 'Количество');
+    this.addProperty<string>(this.data.size, prodProperties, 'Длина, см');
+    this.addProperty<string>(this.data.popularity, prodProperties, 'Популярность');
     prodProperties.append(prodButton);
   }
 }

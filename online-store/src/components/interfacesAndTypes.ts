@@ -26,7 +26,7 @@ interface IRangeTemplate {
 
 interface IProduct {
   data: IProductStats;
-  addProperty(prop: string, target: HTMLElement, propName?: string): void;
+  addProperty<T>(prop: T, target: HTMLElement, propName?: string): void;
   create(): void;
 }
 
