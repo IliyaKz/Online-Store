@@ -1,9 +1,9 @@
-import { ProductStartDrawer } from '../products/productStartDrawer';
-import { TemplateKeeper } from '../products/productTemplate';
-import { IFilterStats, IReset } from '../interfacesAndTypes';
-import { Checkbox } from './checkboxes';
-import { RangeSlider } from './rangeSliders';
-import '../../styles/reset.css';
+import { ProductStartDrawer } from "../products/productStartDrawer";
+import { TemplateKeeper } from "../products/productTemplate";
+import { IFilterStats, IReset } from "../interfacesAndTypes";
+import { Checkbox } from "./checkboxes";
+import { RangeSlider } from "./rangeSliders";
+import "../../styles/reset.css";
 
 class Reset implements IReset {
   static isSaveAllowed = true;
@@ -11,18 +11,20 @@ class Reset implements IReset {
   productDrawer: ProductStartDrawer;
 
   constructor() {
-    this.productDrawer = new ProductStartDrawer;
+    this.productDrawer = new ProductStartDrawer();
   }
 
   createResetFilterButton(): void {
-    const target = document.querySelector('.resets') as HTMLElement;
+    const target = document.querySelector(".resets") as HTMLElement;
     if (target === undefined) return;
-    const wrapper = document.createElement('div') as HTMLElement;
-    const resetFilterButton = document.createElement('button') as HTMLButtonElement;
-    resetFilterButton.classList.add('reset-button', 'reset-filter-button');
-    resetFilterButton.innerText = 'Сбросить фильтры';
-    resetFilterButton.addEventListener('click', () => {
-      const resetEvent = new Event('resetEvent', {
+    const wrapper = document.createElement("div") as HTMLElement;
+    const resetFilterButton = document.createElement(
+      "button"
+    ) as HTMLButtonElement;
+    resetFilterButton.classList.add("reset-button", "reset-filter-button");
+    resetFilterButton.innerText = "Сбросить фильтры";
+    resetFilterButton.addEventListener("click", () => {
+      const resetEvent = new Event("resetEvent", {
         bubbles: true,
         cancelable: true,
         composed: true,
@@ -43,13 +45,15 @@ class Reset implements IReset {
   }
 
   createResetStorageButton(): void {
-    const target = document.querySelector('.resets') as HTMLElement;
+    const target = document.querySelector(".resets") as HTMLElement;
     if (target === undefined) return;
-    const wrapper = document.createElement('div') as HTMLElement;
-    const resetFilterButton = document.createElement('button') as HTMLButtonElement;
-    resetFilterButton.classList.add('reset-button', 'reset-storage-button');
-    resetFilterButton.innerText = 'Сбросить настройки';
-    resetFilterButton.addEventListener('click', () => {
+    const wrapper = document.createElement("div") as HTMLElement;
+    const resetFilterButton = document.createElement(
+      "button"
+    ) as HTMLButtonElement;
+    resetFilterButton.classList.add("reset-button", "reset-storage-button");
+    resetFilterButton.innerText = "Сбросить настройки";
+    resetFilterButton.addEventListener("click", () => {
       Reset.isSaveAllowed = false;
       localStorage.clear();
       window.location.reload();
@@ -57,7 +61,6 @@ class Reset implements IReset {
     target.append(wrapper);
     wrapper.append(resetFilterButton);
   }
-
 }
 
 export { Reset };

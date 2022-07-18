@@ -34,7 +34,10 @@ interface IProdCreator {
   data: Array<IProductStats>;
   createProducts(): void;
   drawProducts(arr: Array<IProduct>): void;
-  filterProducts(currentTemplate: IFilterStats, arr: Array<IProduct>): Array<IProduct>;
+  filterProducts(
+    currentTemplate: IFilterStats,
+    arr: Array<IProduct>
+  ): Array<IProduct>;
 }
 
 interface IMessage {
@@ -45,7 +48,11 @@ interface ISorting {
   creator: IProdCreator;
   message: IMessage;
   sortingProducts(array: Array<IProduct>): Array<IProduct> | void;
-  createSelectItem(text: string, parent: HTMLElement, current: HTMLElement): void;
+  createSelectItem(
+    text: string,
+    parent: HTMLElement,
+    current: HTMLElement
+  ): void;
   createSelect(): void;
 }
 
@@ -66,7 +73,12 @@ interface ICheckboxes {
   productDrawer: IProdStartDrawing;
   getCheckbox(): void;
   setCheckbox(): void;
-  createCheckbox(name: string, text: string, prop: keyof IFilterStats, labelText?: string): void;
+  createCheckbox(
+    name: string,
+    text: string,
+    prop: keyof IFilterStats,
+    labelText?: string
+  ): void;
 }
 
 interface IRanges {
@@ -74,7 +86,11 @@ interface IRanges {
   productDrawer: IProdStartDrawing;
   getRanges(): void;
   setRanges(): void;
-  createRangeSlider(min: number, max: number, prop: (keyof IFilterStats | keyof IRangeTemplate)): void
+  createRangeSlider(
+    min: number,
+    max: number,
+    prop: keyof IFilterStats | keyof IRangeTemplate
+  ): void;
 }
 
 interface IReset {
@@ -86,7 +102,7 @@ interface IReset {
 interface ISearch {
   message: IMessage;
   productDrawer: IProdStartDrawing;
-  createSearch(): void
+  createSearch(): void;
 }
 
 interface IControllers {
@@ -117,4 +133,21 @@ interface IApp {
 
 type IFilterStatsConst = Readonly<IFilterStats>;
 
-export { IProductStats, IFilterStats, IFilterStatsConst, IRangeTemplate, IProduct, IProdCreator, IMessage, ISorting, IProdStartDrawing, IBasket, ICheckboxes, IRanges, IReset, ISearch, IControllers, IApp };
+export {
+  IProductStats,
+  IFilterStats,
+  IFilterStatsConst,
+  IRangeTemplate,
+  IProduct,
+  IProdCreator,
+  IMessage,
+  ISorting,
+  IProdStartDrawing,
+  IBasket,
+  ICheckboxes,
+  IRanges,
+  IReset,
+  ISearch,
+  IControllers,
+  IApp,
+};

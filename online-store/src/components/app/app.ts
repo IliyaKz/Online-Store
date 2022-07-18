@@ -1,8 +1,8 @@
-import { ProductCreator } from '../products/productCreator';
-import { Controller } from '../settings/controllers';
-import { Basket } from '../settings/basket';
-import { ProductStartDrawer } from '../products/productStartDrawer';
-import { IApp } from '../interfacesAndTypes';
+import { ProductCreator } from "../products/productCreator";
+import { Controller } from "../settings/controllers";
+import { Basket } from "../settings/basket";
+import { ProductStartDrawer } from "../products/productStartDrawer";
+import { IApp } from "../interfacesAndTypes";
 
 class App implements IApp {
   creator: ProductCreator;
@@ -14,10 +14,10 @@ class App implements IApp {
   startDrawer: ProductStartDrawer;
 
   constructor() {
-    this.creator = new ProductCreator;
-    this.controller = new Controller;
-    this.basket = new Basket;
-    this.startDrawer = new ProductStartDrawer;
+    this.creator = new ProductCreator();
+    this.controller = new Controller();
+    this.basket = new Basket();
+    this.startDrawer = new ProductStartDrawer();
   }
 
   start(): void {
