@@ -65,17 +65,29 @@
 .color-label.yellow {
   background: linear-gradient(-45deg, #946b04 10%, #f6e52b 50%, #edf4a0 90%);
 }
+.color-label.yellow:hover {
+  background: linear-gradient(-45deg, #dfad2e 10%, #f5e858 50%, #f2f5d8 90%);
+}
 
 .color-label.red {
   background: linear-gradient(-45deg, #371102 10%, #c80000 50%, #fa5b16 90%);
+}
+.color-label.red:hover {
+  background: linear-gradient(-45deg, #651f03 10%, #f43333 50%, #fa7c46 90%);
 }
 
 .color-label.green {
   background: linear-gradient(-45deg, #02351f 10%, #058b10 50%, #82f913 90%);
 }
+.color-label.green:hover {
+  background: linear-gradient(-45deg, #055a35 10%, #3ddb4b 50%, #adf36c 90%);
+}
 
 .color-label.blue {
   background: linear-gradient(-45deg, #29073f 10%, #032ab8 50%, #13b0f9 90%);
+}
+.color-label.blue:hover {
+  background: linear-gradient(-45deg, #3b0a78 10%, #3e63ed 50%, #85cced 90%);
 }
 
 .country-label:hover,
