@@ -82,9 +82,11 @@ class RangeSlider implements IRanges {
       rightValueContainer.innerText =
         RangeSlider.currentRanges[prop as keyof IRangeTemplate][1].toString();
     }
-    target.noUiSlider.on("change", (values: Array<string>) => {
+    target.noUiSlider.on("update", (values: Array<string>) => {
       leftValueContainer.innerText = (+values[0]).toString();
       rightValueContainer.innerText = (+values[1]).toString();
+    });
+    target.noUiSlider.on("change", (values: Array<string>) => {
       RangeSlider.currentRanges[prop as keyof IRangeTemplate] = values.map(
         (item) => +item
       );

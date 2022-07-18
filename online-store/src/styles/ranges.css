@@ -36,7 +36,9 @@
   text-align: center;
   box-sizing: border-box;
 }
-
+.noUi-target {
+  cursor: pointer;
+}
 .noUi-connect {
   background-color: var(--green-light) !important;
 }
